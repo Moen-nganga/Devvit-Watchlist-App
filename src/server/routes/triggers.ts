@@ -107,7 +107,7 @@ async function handleCommentSubmit(event: OnCommentSubmitRequest): Promise<void>
       await replyTarget.reply({
         text: already
           ? `u/${target} was already on the scammer watchlist. Record updated.`
-          : `🚨 u/${target} has been added to the scammer watchlist. This account will now be flagged automatically on future posts and comments in this subreddit.`,
+          : `🚨 u/${target} has been added to the SCAMMER watchlist. This account will now be flagged automatically on future posts and comments in this subreddit.`,
       });
       break;
     }
