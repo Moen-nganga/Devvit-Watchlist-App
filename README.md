@@ -1,27 +1,46 @@
-## Devvit React Starter
+# scammerwatchlist
 
-A starter to build web applications on Reddit's developer platform
+A Reddit app (built on [Devvit](https://developers.reddit.com/)) that lets redditors flag scammers in a comment — the app handles the lookup, the listing, and the ongoing warnings automatically.
 
-- [Devvit](https://developers.reddit.com/): A way to build and deploy immersive games on Reddit
-- [Vite](https://vite.dev/): For compiling the webView
-- [React](https://react.dev/): For UI
-- [Hono](https://hono.dev/): For backend logic
-- [Tailwind](https://tailwindcss.com/): For styles
-- [TypeScript](https://www.typescriptlang.org/): For type safety
+## Why you should install it in your subreddit
 
-## Getting Started
+- Marketplace, trading, gig-work, and freelancing subreddits are easy targets for repeat scammers.
+- Banned accounts often resurface under the same username elsewhere.
+- One flag from one person protects everyone who interacts with that account afterward.
+- No mod approval needed, no separate form, just a comment.
 
-> Make sure you have Node 22 downloaded on your machine before running!
+## How it works
 
-1. Run `npm create devvit@latest --template=react`
-2. Go through the installation wizard. You will need to create a Reddit account and connect it to Reddit developers
-3. Copy the command on the success page into your terminal
+| Comment | Effect |
+| `u/scammerwatchlist` | Checks if the target account is on the watchlist |
+| `u/scammerwatchlist blacklist` | Adds the target account to the watchlist |
+| `u/scammerwatchlist remove blacklist` | Removes the target account (for corrections) |
+
+**Targeting:**
+- Reply to a comment → that comment's author is the target
+- Top-level comment on a post → the post's author (OP) is the target
+
+**Ongoing enforcement:**
+- Once listed, the account gets auto-flagged on *every* future post/comment in the subreddit
+- No mention needed, it's automated from then on
+
+**Safeguards:**
+- Anyone can flag/check — no special permissions
+- Can't blacklist or remove yourself
+- Bot ignores its own replies (no loops)
 
 ## Commands
 
-- `npm run dev`: Starts a development server where you can develop your application live on Reddit.
-- `npm run build`: Builds your client and server projects
-- `npm run deploy`: Uploads a new version of your app
-- `npm run launch`: Publishes your app for review
-- `npm run login`: Logs your CLI into Reddit
-- `npm run type-check`: Type checks, lints, and prettifies your app
+- `npm run dev` – local dev server, live on Reddit
+- `npm run build` – build client + server
+- `npm run deploy` – upload new version
+- `npm run launch` – publish for review
+- `npm run login` – log CLI into Reddit
+- `npm run type-check` – type check, lint, format
+
+## Built with
+
+- [Devvit](https://developers.reddit.com/) – Reddit's developer platform
+- [Hono](https://hono.dev/) – backend routing
+- [React](https://react.dev/) + [Tailwind](https://tailwindcss.com/) – frontend
+- [TypeScript](https://www.typescriptlang.org/) – type safety
