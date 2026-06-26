@@ -12,6 +12,7 @@ A Reddit app (built on [Devvit](https://developers.reddit.com/)) that lets reddi
 ## How it works
 
 | Comment | Effect |
+|---|---|
 | `u/scammerwatchlist` | Checks if the target account is on the watchlist |
 | `u/scammerwatchlist blacklist` | Adds the target account to the watchlist |
 | `u/scammerwatchlist remove blacklist` | Removes the target account (for corrections) |
@@ -28,6 +29,14 @@ A Reddit app (built on [Devvit](https://developers.reddit.com/)) that lets reddi
 - Anyone can flag/check — no special permissions
 - Can't blacklist or remove yourself
 - Bot ignores its own replies (no loops)
+
+## Data & privacy
+
+- The only data stored is: the flagged Reddit username, who flagged them, when, and the post/comment where the flag happened.
+- Data is stored in Reddit's own Devvit-managed Redis, scoped to the subreddit the app is installed in — nothing is sent to any third-party service or external server.
+- No API keys, analytics, or tracking are used by this app.
+- Removing an account via `u/scammerwatchlist remove blacklist` deletes its entry entirely.
+- Moderator-only actions (e.g. creating a post via the subreddit menu) are verified server-side, not just hidden in the UI.
 
 ## Commands
 
