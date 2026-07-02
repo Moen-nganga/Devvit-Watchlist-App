@@ -14,19 +14,20 @@ A Reddit app (built on [Devvit](https://developers.reddit.com/)) that lets reddi
 | Comment | Effect |
 |---|---|
 | `u/scammerwatchlist` | Checks if the target account is on the watchlist |
-| `u/scammerwatchlist blacklist` | Adds the target account to the watchlist |
-| `u/scammerwatchlist remove blacklist` | Removes the target account (for corrections) |
+| `u/scammerwatchlist blacklist` | Adds the target account to the watchlist | Sends the report to the moderators | (Moderators have the final say)
+| `u/scammerwatchlist remove blacklist` | Removes the target account (for corrections) | Sends the request to the moderators | (Moderators have the final say)
 
 **Targeting:**
 - Reply to a comment → that comment's author is the target
 - Top-level comment on a post → the post's author (OP) is the target
 
 **Ongoing enforcement:**
-- Once listed, the account gets auto-flagged on *every* future post/comment in the subreddit
+- Once listed, the account gets auto-flagged on future posts. The app only replies once under the post. 
+- Once listed, the account gets auto-flagged on future comments. The app only replies to a single comment posted by the flagged's account under a post. 
 - No mention needed, it's automated from then on
 
 **Safeguards:**
-- Anyone can flag/check — no special permissions
+- Anyone can flag, but moderators need to verify it. So they have the final say. 
 - Can't blacklist or remove yourself
 - Bot ignores its own replies (no loops)
 
